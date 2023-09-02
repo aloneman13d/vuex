@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 
-const store = createStore({
+const counterModule = {
+    namespaced: true,
     state(){
         return {counter:0}
     },
@@ -16,6 +17,13 @@ const store = createStore({
         increment(context,payload){
             context.commit('increment',payload)
         }
+    }
+}
+
+const store = createStore({
+    modules:{
+        //namespaced -> counterMod
+        counterMod: counterModule,
     }
 })
 

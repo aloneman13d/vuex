@@ -18,7 +18,7 @@ export default {
         buttonCounter:buttonCounterVue
     },
     computed:{
-      ...mapGetters(['getCounter'])
+      ...mapGetters('counterMod',['getCounter'])
     }
 }
 </script>
