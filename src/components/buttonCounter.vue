@@ -1,14 +1,12 @@
 <template>
-  <button @click="increment">เพิ่มค่าขึ้น</button>
+  <button @click="increment(3)">เพิ่มค่าขึ้น</button>
 </template>
 
 <script>
-
+import { mapActions } from 'vuex'
 export default {
   methods:{
-    increment(){
-      this.$store.dispatch('increment',3)
-    }
+    ...mapActions(['increment'])
   }
 
 }

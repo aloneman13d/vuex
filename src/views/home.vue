@@ -4,7 +4,7 @@
       <h1>ทดลองใช้ vuex</h1>
     </header>
     <section>
-      <div>ค่าใน stor state count {{ $store.getters.getCounter }}</div>
+      <div>ค่าใน stor state count {{ getCounter }}</div>
       <buttonCounter/>
     </section>
   </article>
@@ -12,9 +12,13 @@
 
 <script>
 import buttonCounterVue from '@/components/buttonCounter.vue';
+import { mapGetters } from 'vuex';
 export default {
     components:{
         buttonCounter:buttonCounterVue
+    },
+    computed:{
+      ...mapGetters(['getCounter'])
     }
 }
 </script>
